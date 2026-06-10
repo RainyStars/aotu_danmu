@@ -27,13 +27,15 @@ def main():
 
             danmu = random.choice(danmaku_list)
             client.send_danmu(danmu)
+
+            
+            interval = random.randint(10, 180)
+            log(f"等待 {interval} 秒")
+            time.sleep(interval)
         else:
             log("直播间: 离线")
 
-        interval = random.randint(10, 180)
-        log(f"等待 {interval} 秒")
-        time.sleep(interval)
-
+            time.sleep(3600)
 
 if __name__ == "__main__":
     main()
