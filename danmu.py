@@ -2,9 +2,18 @@ import json
 import time
 from datetime import datetime
 
+# 读取配置文件
+FLUSH = False
+try:
+    with open('config.json', 'r', encoding='utf-8') as f:
+        config = json.load(f)
+        FLUSH = config.get('flush', False)
+except Exception as e:
+    log(f"读取配置文件失败: {e}")
+    FLUSH = False
 
 def log(msg):
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] {msg}")
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] {msg}", flush=FLUSH)
 
 
 class DanmuClient:

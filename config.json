@@ -2,4 +2,5 @@
   "room_id": "你的直播间号",
   "cookie": "你的B站Cookie",
   "danmaku": ["默认弹幕1", "默认弹幕2", "默认弹幕3"]
+  "flush": true
 }
